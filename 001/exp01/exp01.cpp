@@ -1,9 +1,3 @@
-/*
- * @Date: 2024-02-19 14:29:48
- * @LastEditors: harkerhand harkerhand@outlook.com
- * @LastEditTime: 2024-02-19 14:50:29
- * @FilePath: \homework2\001\exp01\exp01.cpp
- */
 #include <iostream>
 #include "Complex.h"
 using namespace std;

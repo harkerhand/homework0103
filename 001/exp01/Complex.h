@@ -1,10 +1,3 @@
-/*
- * @Date: 2024-02-19 14:33:06
- * @LastEditors: harkerhand harkerhand@outlook.com
- * @LastEditTime: 2024-02-19 14:15:49
- * @FilePath: \homework2\001\exp01\Complex.h
- */
-
 #ifndef COMPLEX_H
 #define COMPLEX_H
 
