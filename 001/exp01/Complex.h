@@ -8,6 +8,9 @@
 #ifndef COMPLEX_H
 #define COMPLEX_H
 
+#include <iostream>
+using std::ostream;
+
 class Complex
 {
 
@@ -28,6 +31,5 @@ public:
     Complex operator-(const Complex &c) const;
     friend ostream &operator<<(ostream &os, const Complex &c);
 };
-
 
 #endif
