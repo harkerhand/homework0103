@@ -15,7 +15,6 @@ IntegerSet::IntegerSet(const int array[], int size)
     if (size > 101 || size < 0)
     {
         throw "Array size is out of range";
-        return;
     }
     for (int i = 0; i < size; i++)
     {
@@ -69,7 +68,6 @@ void IntegerSet::insertElement(int element)
     if (validEntry(element) == 0)
     {
         throw "Invalid insert attempted!";
-        return;
     }
     set[element] = 1;
 }
@@ -79,7 +77,6 @@ void IntegerSet::deleteElement(int element)
     if (validEntry(element) != 1)
     {
         throw "Invalid entry";
-        return;
     }
     set[element] = 0;
 }
