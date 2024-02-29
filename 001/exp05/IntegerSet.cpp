@@ -20,7 +20,7 @@ IntegerSet::IntegerSet(const int array[], int size)
     {
         if (validEntry(array[i]) == 0)
         {
-            cout << "Invalid insert attempted!" << endl;
+            cerr << "Invalid insert attempted!" << endl;
             continue;
         }
         this->set[array[i]] = 1;
