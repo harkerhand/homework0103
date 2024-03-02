@@ -12,9 +12,9 @@ jobs:
     - name: Zip
       run:
         echo "Zip Begin"
-        for file in /*
+        for file in *
         do
-            zip -r "/"${file}"/"${file}.zip "/"${file}
+            zip -r ${file}"/"${file}.zip ${file}
         done
         echo "Zip End"
     - name: List files
