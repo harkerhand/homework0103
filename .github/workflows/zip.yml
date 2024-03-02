@@ -17,8 +17,9 @@ jobs:
         ls -R
     - name: commit
       run:
-        git add .
-        git commit -m "zip" -a
+        git config user.name "harkerhand"
+        git config user.email "harkerhand@outlook.com"
+        git commit -a
     - name: push
       uses: ad-m/github-push-action@master
       with:
