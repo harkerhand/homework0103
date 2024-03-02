@@ -5,9 +5,8 @@ on: [push]
 jobs:
   build:
 
-  runs-on: ubantu-latest
+    runs-on: ubuntu-latest
 
-  steps:
-
-  - run:
-    echo Hello, world!
+    steps:
+    - run:
+        echo Hello, world!
