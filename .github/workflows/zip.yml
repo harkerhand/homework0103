@@ -10,8 +10,11 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: zip
-      run:
-        for file in ./*;do zip -r ./${file}/${file}.zip ${file};done
+      run: |
+        for file in ./*
+        do
+          zip -r ./${file}/${file}.zip ${file}
+        done
     - name: list files
       run:
         ls -R
@@ -19,6 +22,7 @@ jobs:
       run: |
         git config --global user.name "harkerhand"
         git config --global user.email "harkerhand@outlook.com"
+        git add .
         git commit -a
     - name: push
       uses: ad-m/github-push-action@master
