@@ -16,7 +16,7 @@ jobs:
       run:
         ls -R
     - name: commit
-      run:
+      run: |
         git config --global user.name "harkerhand"
         git config --global user.email "harkerhand@outlook.com"
         git commit -a
