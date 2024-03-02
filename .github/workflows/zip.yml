@@ -19,5 +19,5 @@ jobs:
         echo Zip End
     - name: List files
       run:
-        ls -a 
+        ls -A -R
         
