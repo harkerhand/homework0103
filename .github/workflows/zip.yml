@@ -23,7 +23,7 @@ jobs:
         git config --global user.name "harkerhand"
         git config --global user.email "harkerhand@outlook.com"
         git add .
-        git commit -a
+        git commit -m "zip" -a
     - name: push
       uses: ad-m/github-push-action@master
       with:
