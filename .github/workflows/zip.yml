@@ -17,11 +17,7 @@ jobs:
             zip -r "$file/${file}.zip" "$file"
         done
         echo Zip End
-    - name: List .zip
+    - name: List files
       run:
-        for file in *.zip
-        do
-          echo "$file" exist
-        done
-        echo All .zip listed
+        ls -a 
         
