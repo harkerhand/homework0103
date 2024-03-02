@@ -23,4 +23,5 @@ jobs:
         do
           echo "$file" exist
         done
+        echo All .zip listed
         
