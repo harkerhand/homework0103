@@ -15,7 +15,7 @@ jobs:
         
         for file in *
         do
-            zip -r "${file}/${file}.zip" "$file"
+            zip -r ${file}"/"${file}.zip ${file}
         done
         
         echo Zip End.
