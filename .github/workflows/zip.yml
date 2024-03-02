@@ -14,7 +14,8 @@ jobs:
         echo "Zip Begin"
         cd .
         zip -r 001.zip 001
-        for file in ./*; do
+        for file in ./*
+        do
           cd ./"${file}"
           zip -r ./"${file}".zip .
           cd ..
