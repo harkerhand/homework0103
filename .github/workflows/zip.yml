@@ -13,13 +13,12 @@ jobs:
       run:
         echo "Zip Begin"
         cd .
-        for file in ./*
-        do
-            cd ./"${file}"
-            zip -r ./"${file}".zip .
-            cd ..
+        zip -r 001.zip 001
+        for file in ./*; do
+          cd ./"${file}"
+          zip -r ./"${file}".zip .
+          cd ..
         done
-        
         echo "Zip End"
     - name: List files
       run:
