@@ -9,10 +9,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Zip
+    - name: zip
       run:
         for file in ./*;do zip -r ./${file}/${file}.zip ${file};done
-    - name: List files
+    - name: list files
       run:
         ls -R
-        
+    - name: commit
+      run:
+        git add .
+        git commit -m "zip" -a
+    - name: push
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.action-zip }}
