@@ -11,14 +11,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Zip
       run:
-        cd .
         zip -r 001.zip 001
-        for file in ./*
-        do
-          cd ./"${file}"
-          zip -r ./"${file}".zip .
-          cd ..
-        done
     - name: List files
       run:
         ls -R
