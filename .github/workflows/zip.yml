@@ -1,0 +1,13 @@
+name: zip
+
+on: [push]
+
+jobs:
+  build:
+
+  runs-on: ubantu-latest
+
+  steps:
+
+  - run:
+    echo Hello, world!
