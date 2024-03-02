@@ -8,5 +8,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run:
-        echo Hello, world!
+    - uses: actions/checkout@v1
+    - name: Zip
+      run:
+        echo Zip Begin
+        for file in *
+        do
+            zip -r "$file/${file}.zip" "$file"
+        done
+        echo Zip End
+    - name: List .zip
+      run:
+        for file in *.zip
+        do
+          echo "${file}.zip Existed"
+        done
+        
