@@ -4,10 +4,7 @@ using namespace std;
 class Shape
 {
 public:
-    Shape()
-    {
-        id = "Shape";
-    }
+    Shape(const std::string idIN = "Shape") : id(idIN) {}
     ~Shape()
     {
     }
