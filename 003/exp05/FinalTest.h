@@ -2,25 +2,24 @@
 
 #include "Date.h"
 #include <iostream>
-using namespace std;
 class FinalTest
 {
-    friend ostream &operator<<(ostream &cout, const FinalTest &in)
+    friend std::ostream &operator<<(std::ostream &out, const FinalTest &in)
     {
-        cout << "Title: " << in.name << "\nTest Date: " << in.date << "\n";
-        return cout;
+        out << "Title: " << in.name << "\nTest Date: " << in.date << "\n";
+        return out;
     }
 
 private:
-    string name;
+    std::string name;
     Date date;
 
 public:
-    FinalTest(string, Date);
-    FinalTest(string);
+    FinalTest(std::string, Date);
+    FinalTest(std::string);
     void print() const
     {
-        cout << *this;
+        std::cout << *this;
     }
     void setDate(Date d)
     {
@@ -28,11 +27,11 @@ public:
     }
 };
 
-FinalTest::FinalTest(string n, Date d)
+FinalTest::FinalTest(std::string n, Date d)
     : name(n), date(d)
 {
 }
-FinalTest::FinalTest(string n)
+FinalTest::FinalTest(std::string n)
     : name(n), date(Date())
 {
 }

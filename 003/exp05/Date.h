@@ -1,9 +1,8 @@
 #pragma once
 #include <iostream>
-using namespace std;
 class Date
 {
-    friend ostream &operator<<(ostream &cout, const Date &in)
+    friend std::ostream &operator<<(std::ostream &cout, const Date &in)
     {
         return cout << "Date: " << in.year << "-" << in.month << "-" << in.day;
     }
