@@ -1,8 +1,11 @@
 #include "Shape.h"
 #include <array>
 #include <iostream>
-using namespace std;
-class Circle : public Shape
+#define M_PI 3.14159265358979323846
+using std::array;
+using std::cout;
+using std::endl;
+class Circle : private Shape
 {
 public:
     Circle()
@@ -22,17 +25,17 @@ public:
     }
     double area() const
     {
-        return 3.14159 * radius * radius;
+        return M_PI * radius * radius;
     }
-    void print()
+    void print(std::ostream &out = cout) const
     {
-        cout << "Id: " << id << "\n";
-        cout << "Center: (" << center[0] << ", " << center[1] << ")\n";
-        cout << "Left: (" << left[0] << ", " << left[1] << ")\n";
-        cout << "Right: (" << right[0] << ", " << right[1] << ")\n";
-        cout << "Radius: " << radius << "\n";
-        cout << "Area: " << area() << "\n";
-        cout << "\n";
+        out << "Id: " << id << "\n";
+        out << "Center: (" << center[0] << ", " << center[1] << ")\n";
+        out << "Left: (" << left[0] << ", " << left[1] << ")\n";
+        out << "Right: (" << right[0] << ", " << right[1] << ")\n";
+        out << "Radius: " << radius << "\n";
+        out << "Area: " << area() << "\n";
+        out << "\n";
     }
     ~Circle()
     {
@@ -45,7 +48,7 @@ private:
     double radius;
 };
 
-class Triangle : public Shape
+class Triangle : private Shape
 {
 public:
     Triangle()
@@ -63,17 +66,17 @@ public:
 
     double area() const
     {
-        return abs((a[0] * (b[1] - c[1])) + (b[0] * (c[1] - a[1])) + (c[0] * (a[1] - b[1]))) / 2;
+        return std::abs((a[0] * (b[1] - c[1])) + (b[0] * (c[1] - a[1])) + (c[0] * (a[1] - b[1]))) / 2;
     }
 
-    void print() const
+    void print(std::ostream &out = cout) const
     {
-        cout << "Id: " << id << "\n";
-        cout << "A: (" << a[0] << ", " << a[1] << ")\n";
-        cout << "B: (" << b[0] << ", " << b[1] << ")\n";
-        cout << "C: (" << c[0] << ", " << c[1] << ")\n";
-        cout << "Area: " << area() << "\n";
-        cout << "\n";
+        out << "Id: " << id << "\n";
+        out << "A: (" << a[0] << ", " << a[1] << ")\n";
+        out << "B: (" << b[0] << ", " << b[1] << ")\n";
+        out << "C: (" << c[0] << ", " << c[1] << ")\n";
+        out << "Area: " << area() << "\n";
+        out << "\n";
     }
 
 private:
@@ -82,7 +85,7 @@ private:
     array<double, 2> c;
 };
 
-class Rectangle : public Shape
+class Rectangle : protected Shape
 {
 public:
     Rectangle()
@@ -112,13 +115,13 @@ public:
         return (rightDown[0] - leftUp[0]) * (rightDown[1] - leftUp[1]);
     }
 
-    void print() const
+    void print(std::ostream &out = cout) const
     {
-        cout << "Id: " << id << "\n";
-        cout << "Left up: (" << leftUp[0] << ", " << leftUp[1] << ")\n";
-        cout << "Right down: (" << rightDown[0] << ", " << rightDown[1] << ")\n";
-        cout << "Area: " << area() << "\n";
-        cout << "\n";
+        out << "Id: " << id << "\n";
+        out << "Left up: (" << leftUp[0] << ", " << leftUp[1] << ")\n";
+        out << "Right down: (" << rightDown[0] << ", " << rightDown[1] << ")\n";
+        out << "Area: " << area() << "\n";
+        out << "\n";
     }
 
 protected:
@@ -128,7 +131,7 @@ protected:
     double width;
 };
 
-class Square : public Rectangle
+class Square : private Rectangle
 {
 public:
     Square()
@@ -155,16 +158,16 @@ public:
         return length * length;
     }
 
-    Circle incircle()
+    Circle incircle() const
     {
         return Circle({leftUp[0] + length / 2, leftUp[1] + length / 2}, length / 2);
     }
-    void print() const
+    void print(std::ostream &out = cout) const
     {
-        cout << "Id: " << id << "\n";
-        cout << "Left up: (" << leftUp[0] << ", " << leftUp[1] << ")\n";
-        cout << "Length: " << length << "\n";
-        cout << "Area: " << area() << "\n";
-        cout << "\n";
+        out << "Id: " << id << "\n";
+        out << "Left up: (" << leftUp[0] << ", " << leftUp[1] << ")\n";
+        out << "Length: " << length << "\n";
+        out << "Area: " << area() << "\n";
+        out << "\n";
     }
 };

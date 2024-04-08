@@ -2,9 +2,9 @@
 #include <iostream>
 class Date
 {
-    friend std::ostream &operator<<(std::ostream &cout, const Date &in)
+    friend std::ostream &operator<<(std::ostream &out, const Date &in)
     {
-        return cout << "Date: " << in.year << "-" << in.month << "-" << in.day;
+        return out << "Date: " << in.year << "-" << in.month << "-" << in.day;
     }
 
 private:
