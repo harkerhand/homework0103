@@ -77,10 +77,10 @@ ostream &operator<<(ostream &out, const Complex &c)
 
 istream &operator>>(istream &in, Complex &c)
 {
-    getchar();
+    in.ignore();
     in >> c.realPart;
-    getchar();
+    in.ignore();
     in >> c.imaginaryPart;
-    getchar();
+    in.ignore();
     return in;
 }
