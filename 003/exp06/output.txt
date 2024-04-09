@@ -1,0 +1,30 @@
+Id: Circle
+Center: (1, 2)
+Left: (-2, 2)
+Right: (4, 2)
+Radius: 3
+Area: 28.2743
+
+Id: Triangle
+A: (3, 3)
+B: (0, 0)
+C: (3, 0)
+Area: 4.5
+
+Id: Rectangle
+Left up: (2, 1)
+Right down: (6, -2)
+Area: 12
+
+Id: Square
+Left up: (3, 3)
+Length: 4
+Area: 16
+
+Id: Circle
+Center: (5, 5)
+Left: (3, 5)
+Right: (7, 5)
+Radius: 2
+Area: 12.5664
+
