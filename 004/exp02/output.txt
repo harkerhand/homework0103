@@ -38,7 +38,8 @@ Volume: 33.5103
 
 Id: Cylinder
 Center: (0, 0, 0)
-Top center: (0, 4, 0)
+Top center: (0, 0, 2)
+Down center: (0, 0, -2)
 Radius: 3
 Height: 4
 Area: 75.3982

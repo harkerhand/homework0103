@@ -16,5 +16,8 @@ int main()
     shapes.push_back(new Sphere({1, 1, 1}, 2));
     shapes.push_back(new Cylinder({0, 0, 0}, 3, 4));
     for (auto s : shapes)
+    {
         s->print(fout);
+        s->print();
+    }
 }

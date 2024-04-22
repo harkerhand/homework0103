@@ -1,8 +1,6 @@
 #include "Shape.h"
-#include <array>
 #include <tuple>
 #include <iostream>
-#define M_PI 3.14159265358979323846
 using std::array;
 using std::cout;
 using std::endl;
@@ -12,6 +10,8 @@ using std::make_tuple;
 using std::pair;
 using std::string;
 using std::tuple;
+
+constexpr double M_PI = 3.14159265358979323846;
 
 class TwoDimensionalShape : public Shape
 {
@@ -148,7 +148,6 @@ public:
 
     Circle incircle() const
     {
-        Circle temp(make_pair(leftUp.first + length / 2, leftUp.second - length / 2), length / 2);
         return Circle(make_pair(leftUp.first + length / 2, leftUp.second - length / 2), length / 2);
     }
     void print(std::ostream &out = cout) const override
@@ -197,7 +196,7 @@ class Cylinder : public ThreeDimensionalShape
 
 public:
     Cylinder() : ThreeDimensionalShape("Cylinder", make_tuple(0, 0, 0)) {}
-    Cylinder(tuple<double, double, double> c, double r, double h) : ThreeDimensionalShape("Cylinder", c), radius(r), height(h), topCenter(make_tuple(get<0>(c), get<1>(c) + h, get<2>(c))) {}
+    Cylinder(tuple<double, double, double> c, double r, double h) : ThreeDimensionalShape("Cylinder", c), radius(r), height(h), topCenter(make_tuple(get<0>(c), get<1>(c), get<2>(c) + h / 2)), downCenter(make_tuple(get<0>(c), get<1>(c), get<2>(c) - h / 2)) {}
     ~Cylinder() {}
 
     virtual double getArea() const override
@@ -214,6 +213,7 @@ public:
         out << "Id: " << id << "\n";
         out << "Center: (" << get<0>(center) << ", " << get<1>(center) << ", " << get<2>(center) << ")\n";
         out << "Top center: (" << get<0>(topCenter) << ", " << get<1>(topCenter) << ", " << get<2>(topCenter) << ")\n";
+        out << "Down center: (" << get<0>(downCenter) << ", " << get<1>(downCenter) << ", " << get<2>(downCenter) << ")\n";
         out << "Radius: " << radius << "\n";
         out << "Height: " << height << "\n";
         out << "Area: " << getArea() << "\n";
@@ -225,4 +225,5 @@ private:
     double radius;
     double height;
     tuple<double, double, double> topCenter;
+    tuple<double, double, double> downCenter;
 };

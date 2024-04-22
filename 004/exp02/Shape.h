@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 class Shape
 {
 public:
@@ -7,7 +8,7 @@ public:
     {
     }
     virtual double getArea() const = 0;
-    virtual void print(std::ostream &out) const = 0;
+    virtual void print(std::ostream &out = std::cout) const = 0;
 
 protected:
     std::string id;
