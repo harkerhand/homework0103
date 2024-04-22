@@ -122,6 +122,7 @@ public:
         out << "Left up: (" << leftUp[0] << ", " << leftUp[1] << ")\n";
         out << "Length: " << length << "\n";
         out << "Area: " << area() << "\n";
-        out << "\n";
+        out << "Incircle: \n";
+        incircle().print(out);
     }
 };

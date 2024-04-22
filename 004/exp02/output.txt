@@ -6,12 +6,14 @@ Radius: 3
 Area: 28.2743
 
 Id: Triangle
+Center: (2, 1)
 A: (3, 3)
 B: (0, 0)
 C: (3, 0)
 Area: 4.5
 
 Id: Rectangle
+Center: (4, -0.5)
 Left up: (2, 1)
 Right down: (6, -2)
 Area: 12
@@ -22,16 +24,23 @@ Length: 4
 Area: 16
 Incircle: 
 Id: Circle
-Center: (5, 5)
-Left: (3, 5)
-Right: (7, 5)
+Center: (5, 1)
+Left: (3, 1)
+Right: (7, 1)
 Radius: 2
 Area: 12.5664
 
-Id: Circle
-Center: (5, 5)
-Left: (3, 5)
-Right: (7, 5)
+Id: Sphere
+Center: (1, 1, 1)
 Radius: 2
-Area: 12.5664
+Area: 50.2655
+Volume: 33.5103
+
+Id: Cylinder
+Center: (0, 0, 0)
+Top center: (0, 4, 0)
+Radius: 3
+Height: 4
+Area: 75.3982
+Volume: 113.097
 
